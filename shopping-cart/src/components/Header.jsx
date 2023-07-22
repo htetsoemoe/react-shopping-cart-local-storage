@@ -2,8 +2,14 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>
-      <p>This is a Header Component.</p>
+    <div className='block row center'>
+      <div>
+        <a href="#"><h1>Shopping Cart</h1></a>
+      </div>
+
+      <div>
+        <a href="#">Cart</a> <a href="#">Sign In</a>
+      </div>
     </div>
   )
 }
