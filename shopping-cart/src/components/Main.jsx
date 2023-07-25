@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Product from './Product';
 
 const Main = (props) => {
-  const { products } = props // destructuring props object and get json array
-  console.log(products);
+
+  const {products, addItem} = props
 
   return (
     <div className='col-2 block'>
       <div className="row">
         {products.map((product) => (
-          <Product key={product.id} product={product}/>
+          <Product key={product.id}
+            product={product}
+            addItem={addItem}
+          />
         ))}
       </div>
     </div>

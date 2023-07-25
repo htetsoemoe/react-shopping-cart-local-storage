@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className='block row center'>
       <div>
@@ -8,7 +8,10 @@ const Header = () => {
       </div>
 
       <div>
-        <a className='Btn' href="#">Cart</a> <a className='Btn' href="#">Sign In</a>
+        <a className='Btn' href="#">
+          Cart {props.countCartItems ? (<button className='badge'>{props.countCartItems}</button>) : ('')}
+        </a> 
+          <a className='Btn' href="#">Sign In</a>
       </div>
     </div>
   )

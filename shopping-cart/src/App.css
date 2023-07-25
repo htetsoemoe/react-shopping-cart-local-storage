@@ -75,3 +75,11 @@ button {
   margin: 0.5rem;
   border-radius: 5px;
 }
+
+/* style for number of items in cart */
+button.badge {
+  background-color: #f04040;
+  border: none;
+  color: #ffffff;
+  width: 1.5rem;
+}
