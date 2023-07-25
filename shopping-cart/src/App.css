@@ -83,3 +83,19 @@ button.badge {
   color: #ffffff;
   width: 1.5rem;
 }
+
+/* style for add/subtract button */
+button.add {
+  background-color: #40C0f0;
+  width: 1.5rem;
+}
+
+button.remove {
+  background-color: #f04040;
+  width: 1.5rem;
+}
+
+span.p-1 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}

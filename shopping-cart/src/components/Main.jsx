@@ -3,7 +3,7 @@ import Product from './Product';
 
 const Main = (props) => {
 
-  const {products, addItem} = props
+  const { products, cartItems, addItem, removeItem } = props
 
   return (
     <div className='col-2 block'>
@@ -11,7 +11,9 @@ const Main = (props) => {
         {products.map((product) => (
           <Product key={product.id}
             product={product}
+            item={cartItems.find(item => item.id === product.id) }
             addItem={addItem}
+            removeItem={removeItem}
           />
         ))}
       </div>

@@ -10,7 +10,7 @@ const App = () => {
 
   const addItem = (product) => {
     // Check product is already exist in cart
-    const exist = cartItems.find(item => item.id === product.id)
+    const exist = cartItems?.find(item => item.id === product.id)
 
     if (exist) {
       setCartItems(
@@ -22,13 +22,24 @@ const App = () => {
   }
 
   const removeItem = (product) => {
+    const exist = cartItems.find(item => item.id === product.id)
+
+    if (exist.qty === 1) {
+      const newCartItems = cartItems.find(item => item.id !== product.id)
+      setCartItems(newCartItems)
+    } else {
+      const newCartItems = cartItems.map(item => 
+        item.id === product.id ? {...exist, qty: exist.qty - 1} : item
+      )
+      setCartItems(newCartItems)
+    }
 
   }
   return (
     <div>
-      <Header countCartItems = {cartItems.length}/>
+      <Header countCartItems = {cartItems?.length}/>
       <div className="row">
-        <Main products={products} addItem={addItem}/>
+        <Main cartItems={cartItems} products={products} addItem={addItem} removeItem={removeItem}/>
         <Cart />
       </div>
     </div>
