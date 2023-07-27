@@ -11,7 +11,7 @@ const Main = (props) => {
         {products.map((product) => (
           <Product key={product.id}
             product={product}
-            item={cartItems.find(item => item.id === product.id) }
+            // item={cartItems?.find(item => item.id === product.id) }
             addItem={addItem}
             removeItem={removeItem}
           />
